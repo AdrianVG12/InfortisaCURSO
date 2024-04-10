@@ -1,0 +1,29 @@
+{
+  "id": "1c4e6754-9e17-4cca-b2fd-5cdd13faa7b9",
+  "name": "Curso",
+  "publisher": "Infortisa LABS, S.L.",
+  "version": "1.0.0.0",
+  "brief": "",
+  "description": "",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "dependencies": [],
+  "screenshots": [],
+  "platform": "20.0.0.0",
+  "application": "20.0.0.0",
+  "idRanges": [
+    {
+      "from": 50000,
+      "to": 99999
+    }
+  ],
+  "contextSensitiveHelpUrl": "https://plantilla.com/help/",
+  "showMyCode": true,
+  "features": ["TranslationFile"],
+  "runtime": "7.0",
+  "target": "OnPrem",
+  "suppressWarnings": ["AA0218","AA0215"]
+}
