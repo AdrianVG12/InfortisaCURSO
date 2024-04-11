@@ -10,7 +10,14 @@
   "help": "",
   "url": "",
   "logo": "",
-  "dependencies": [],
+  "dependencies": [
+    {
+    "id": "1c4e6754-9e17-4cca-b2fd-5cdd13faa7b9",
+    "name": "Curso",
+    "publisher": "Infortisa LABS, S.L.",
+    "version": "1.0.0.0"
+    }
+  ],
   "screenshots": [],
   "platform": "20.0.0.0",
   "application": "20.0.0.0",
