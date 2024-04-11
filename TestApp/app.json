@@ -1,0 +1,29 @@
+{
+  "id": "b798cd5e-f7cf-4353-8b34-d73e8b50faa6",
+  "name": "TestApp",
+  "publisher": "Default Publisher",
+  "version": "1.0.0.0",
+  "brief": "",
+  "description": "",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "dependencies": [],
+  "screenshots": [],
+  "platform": "20.0.0.0",
+  "application": "20.0.0.0",
+  "idRanges": [
+    {
+      "from": 50140,
+      "to": 50149
+    }
+  ],
+  "showMyCode": true,
+  "runtime": "7.0",
+  "features": [
+    "NoImplicitWith","TranslationFile"
+  ],
+  "suppressWarnings": ["AA0218","AA0215"]
+}
