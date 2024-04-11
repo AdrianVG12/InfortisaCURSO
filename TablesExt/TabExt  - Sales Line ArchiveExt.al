@@ -1,4 +1,4 @@
-tableextension 50100 "Curso Tabla Extension" extends "Sales Line"
+tableextension 50105 "Curso Tabla ExtLine Archive" extends "Sales Line Archive"
 {
     fields
     {

@@ -8,6 +8,7 @@ table 50003 "Course Edition"
         {
             Caption = 'Course No.', Comment = 'ESP="Nº Curso"';
             TableRelation = Course;
+
         }
         field(2; Edition; Code[20])
         {
@@ -33,6 +34,9 @@ table 50003 "Course Edition"
 
     fieldgroups
     {
-        // Add changes to field groups here
+        fieldgroup(DropDown; Edition, "Start Date", "Max. Students") //DropDown se usa en los Lookups
+        {
+
+        }
     }
 }

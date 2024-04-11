@@ -1,4 +1,4 @@
-tableextension 50100 "Curso Tabla Extension" extends "Sales Line"
+tableextension 50104 "Curso Tabla ExtRetunrLine" extends "Return Receipt Line"
 {
     fields
     {

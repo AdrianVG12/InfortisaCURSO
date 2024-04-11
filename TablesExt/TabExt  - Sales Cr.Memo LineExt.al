@@ -1,4 +1,4 @@
-tableextension 50100 "Curso Tabla Extension" extends "Sales Line"
+tableextension 50103 "Curso Tabla ExtCr.Memo Line" extends "Sales Cr.Memo Line"
 {
     fields
     {
