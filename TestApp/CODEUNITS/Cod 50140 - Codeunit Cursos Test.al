@@ -7,15 +7,13 @@ codeunit 50140 "Codeunit Cursos Test"
     procedure SelectCourseOnSalesLine()
     var
         Course: Record Course;
-    // LibrarySales : Codeunit "Library - Sales";
+        LibraryCourses: Codeunit "Library - courses";
+
+    // LibrarySales: Codeunit "Library - Sales"; //PROBLEMAS CON LAS EXTENSIONES DE TEST , CORREGIR EN UN FUTURO.
     begin
         //[Scenario] Se puede seleciionar un curso en una linea de venta
 
-        //[Given] Un curso configurado con: nombre, grupos contables, precio
-        Course.Init(); //inicia el registro para una tabla
-        Course.Validate(Name, 'Nombre de curso');
-        Course.Validate(Price, 999);
-        Course.Insert(true); //Insterta el registro en una tabla
+        Course := LibraryCourses.CreateCourse();
 
         //          Un documento de venta
 
