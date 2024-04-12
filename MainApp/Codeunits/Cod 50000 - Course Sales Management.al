@@ -5,7 +5,8 @@ codeunit 50000 "Course Sales Management"
     [EventSubscriber(ObjectType::Table, Database::"Sales Line", 'OnAfterAssignFieldsForNo', '', false, false)]
     local procedure "Sales Line_OnAfterAssignFieldsForNo"(var SalesLine: Record "Sales Line"; var xSalesLine: Record "Sales Line"; SalesHeader: Record "Sales Header")
     begin
-        CopyFromCourse(SalesLine, SalesHeader);
+        if SalesLine.Type = SalesLine.Type::"Course" then //CORRECION DEL BUG SALESLINE (Antes solo se podian añadir cursos)si el valor de saleslines es el valor curso, enontonces hace el procedimiento, si no...
+            CopyFromCourse(SalesLine, SalesHeader);
     end;
 
     local procedure CopyFromCourse(var SalesLine: Record "Sales Line"; SalesHeader: Record "Sales Header") //Copiado de tabla salesline codigo madre, metodo CopyFromResource, modificar añadir variables de ese code madre
