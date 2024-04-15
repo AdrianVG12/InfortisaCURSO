@@ -5,6 +5,8 @@ page 50001 Course
     PageType = Card;
     UsageCategory = None;
     SourceTable = Course;
+    PromotedActionCategories = 'New,Process,Reporting,Movs.', Comment = 'ESP = "Nuevo, Proceso, Informes, Movimientos"'; //Para cambiar las categorias del menu de la pag, poner nombre a la Category4
+
 
     layout
     {
@@ -75,6 +77,33 @@ page 50001 Course
                     Importance = Promoted;
                     ToolTip = 'Specifies the VAT specification of the involved item or resource to link transactions made for this record with the appropriate general ledger account according to the VAT posting setup.', Comment = 'ESP="Indica la especificación de IVA del curso o recurso en cuestión para vincular las transacciones realizadas para este registro con la cuenta de contabilidad general adecuada según la configuración de grupos de registro."';
                 }
+            }
+        }
+
+    }
+    actions
+    {
+        area(Navigation)
+        {
+            action(VerMovs) //No es necesario, solo para info/apuntes, esto ya se hace al indicar el CardPageID = Course;
+            {
+                Caption = 'Open Card Ledger Entries', Comment = 'ESP="Abre la ficha de movs."';
+                ApplicationArea = All;
+                Image = ResourceLedger;
+                ToolTip = 'Ver movimientos';
+                RunObject = page "Course Ledger Entries"; // Hace lo mismo que el Page.run del trigger OnAction, ejecuta la pag.
+                RunPageLink = "Course No." = field("No."); //para que se busque sobre el curso que esta selecionado
+                Promoted = true;
+                PromotedCategory = Category4; //Para indicar el action en la Category4, cambiamos el nombre arriba en las propiedades principales
+                PromotedOnly = true;
+                ShortcutKey = 'Ctrl+F7';
+                /* trigger OnAction()
+                var
+
+                begin
+                    Message('Abriendo la ficha de movimientos');
+                    Page.Run(page::"Course Ledger Entries");
+                end; */
             }
         }
     }

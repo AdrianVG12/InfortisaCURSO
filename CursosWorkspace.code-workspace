@@ -11,5 +11,18 @@
 	],
 	"settings": {
 		"git.ignoreLimitWarning": true
+	},
+	"launch": {
+		"configurations": [
+			{
+				"name": "snapshotInitialize: Microsoft production cloud",
+				"type": "al",
+				"request": "snapshotInitialize",
+				"environmentType": "Production",
+				"environmentName": "production",
+				"breakOnNext": "WebClient",
+				"executionContext": "DebugAndProfile"
+			}
+		]
 	}
 }

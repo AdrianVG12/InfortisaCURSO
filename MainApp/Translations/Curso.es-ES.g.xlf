@@ -177,6 +177,11 @@
           <note from="Xliff Generator" annotates="general" priority="3">Table Courses Setup - Field Primary Key - Property Caption</note>
           <target>Clave Primaria</target>
         </trans-unit>
+        <trans-unit id="Page 3534050887 - Property 2019332006" size-unit="char" translate="yes" xml:space="preserve">
+          <source>New,Process,Reporting,Movs.</source>
+          <note from="Developer" annotates="general" priority="2">ESP = "Nuevo, Proceso, Informes, Movimientos"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Course - Property PromotedActionCategories</note>
+        </trans-unit>
         <trans-unit id="Page 3534050887 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Course</source>
           <note from="Developer" annotates="general" priority="2">ESP="Ficha Curso"</note>
@@ -219,6 +224,17 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page Course - Control TrainingContent - Property Caption</note>
           <target>Formación</target>
         </trans-unit>
+        <trans-unit id="Page 3534050887 - Action 1271167338 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Ver movimientos</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Course - Action VerMovs - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3534050887 - Action 1271167338 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Open Card Ledger Entries</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Abre la ficha de movs."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Course - Action VerMovs - Property Caption</note>
+          <target>Abre la ficha de movs.</target>
+        </trans-unit>
         <trans-unit id="Page 1535828835 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Course Edition</source>
           <note from="Developer" annotates="general" priority="2">ESP="Ediciones curso"</note>
@@ -250,6 +266,11 @@
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Page Course Ledger Entries - Control Document No. - Property ToolTip</note>
         </trans-unit>
+        <trans-unit id="Page 1447372974 - Control 883711285 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the number of the entry.</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Course Ledger Entries - Control Entry No. - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="Page 1447372974 - Control 3710982960 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the date when the entry was posted.</source>
           <note from="Developer" annotates="general" priority="2"/>
@@ -277,8 +298,13 @@
         </trans-unit>
         <trans-unit id="Page 1447372974 - Action 1405007275 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Find entries...</source>
-          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Developer" annotates="general" priority="2">ESP = "Buscar movs..."</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Course Ledger Entries - Action &amp;Navigate - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2673769522 - Property 2019332006" size-unit="char" translate="yes" xml:space="preserve">
+          <source>New,Process,Reporting,Movs.</source>
+          <note from="Developer" annotates="general" priority="2">ESP = "Nuevo, Proceso, Informes, Movimientos"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Courses - Property PromotedActionCategories</note>
         </trans-unit>
         <trans-unit id="Page 2673769522 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Courses Page</source>
@@ -326,6 +352,17 @@
           <source>Campo Tipo Option</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Page Courses - Control Type Option - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2673769522 - Action 1271167338 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Ver movimientos</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Courses - Action VerMovs - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2673769522 - Action 1271167338 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Open Card Ledger Entries</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Abre la ficha de movs."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Courses - Action VerMovs - Property Caption</note>
+          <target>Abre la ficha de movs.</target>
         </trans-unit>
         <trans-unit id="Page 2673769522 - View 14288736 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>English Courses</source>
