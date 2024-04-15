@@ -72,6 +72,29 @@ page 50000 Courses
         }
     }
 
+    actions
+    {
+        area(Navigation)
+        {
+            action(VerMovs) //No es necesario, solo para info/apuntes, esto ya se hace al indicar el CardPageID = Course;
+            {
+                Caption = 'Open Card', Comment = 'ESP="Abre la ficha de movs."';
+                ApplicationArea = All;
+                Image = ServiceItemGroup;
+                ToolTip = 'Ver movimientos';
+
+
+                trigger OnAction()
+                var
+
+                begin
+                    Message('Abriendo la ficha de movimientos');
+                    Page.Run(page::"Course Ledger Entries");
+                end;
+            }
+        }
+    }
+
     views //Vistas para aplicar filtros
     {
         view(EnglishCourses)
@@ -80,26 +103,4 @@ page 50000 Courses
             Filters = where("Language Code" = filter('ENU'));
         }
     }
-    /*  actions
-     {
-         area(Processing)
-         {
-             action(VerPageCard) //No es necesario, solo para info/apuntes, esto ya se hace al indicar el CardPageID = Course;
-             {
-                 Caption = 'Open Card', Comment = 'ESP="Abre la ficha, crea o modifica"';
-                 ApplicationArea = All;
-                 Image = ServiceItemGroup;
-                 ToolTip = 'Accion crear informe';
-
-
-                 trigger OnAction()
-                 var
-
-                 begin
-                     Message('Abriendo la ficha');
-                     Page.Run(page::Course);
-                 end;
-             }
-         }
-     } */
 }

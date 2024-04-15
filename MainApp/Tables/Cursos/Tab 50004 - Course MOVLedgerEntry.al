@@ -27,6 +27,11 @@ table 50004 "Course Ledger Entry" //Tabla del codigo madre de movimientos de rec
             ;
             TableRelation = Course;
         }
+        field(6; "Course Edition"; Code[20])
+        {
+            Caption = 'Course Edition', Comment = 'ESP = "Edicion del curso"';
+            TableRelation = "Course Edition";
+        }
         field(7; Description; Text[100])
         {
             Caption = 'Description', Comment = 'ESP = "Descripcion"';
@@ -48,6 +53,7 @@ table 50004 "Course Ledger Entry" //Tabla del codigo madre de movimientos de rec
             AutoFormatType = 1;
             Caption = 'Total Price', Comment = 'ESP = "Precio total"';
         }
+
     }
 
     keys //Borrar las keys que ya no usamos
@@ -84,6 +90,7 @@ table 50004 "Course Ledger Entry" //Tabla del codigo madre de movimientos de rec
 
          "Posting Date" := CourseJournaLine."Posting Date";
          "Course No." := CourseJournaLine."Course No.";
+         "Course Edition" := CourseJournaLine."Course Edition";
          Description := CourseJournaLine.Description;
 
          Quantity := CourseJournaLine.Quantity;
