@@ -26,4 +26,30 @@ codeunit 50140 "Codeunit Cursos Test"
 
 
     end;
+
+    //Test para cirucito de ventas
+    [Test]
+
+    procedure PostingASalesDocument()
+    var
+        Course: Record Course;
+        CourseEdition: Record "Course Edition";
+        LibraryCourses: Codeunit "Library - courses";
+    begin
+        // [Scenario] Al registrar un documento de venta con una linea tipo Curso, con una edcion seleciionada, la edicion se traslada a los docuemtnos registrados.
+
+        // [Given] Un curso con ediciones
+        Course := LibraryCourses.CreateCourse();
+        CourseEdition := LibraryCourses.CreateCourseEdition(Course."No.")
+        //          Un docuemtno de venta para el curso y edicion
+
+
+        // [When] Cuando registramos el documento de vente
+
+        //[Then] y luego la edicion se ha guardado correctamente en los docuemtnos regitrados.
+    end;
+
 }
+
+
+
