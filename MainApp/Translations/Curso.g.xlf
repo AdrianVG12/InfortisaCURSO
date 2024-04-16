@@ -423,6 +423,11 @@
           <note from="Developer" annotates="general" priority="2">ESP = "Edición curso"</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Curso Tabla ExtCr.Memo Line - Field Course Edition - Property Caption</note>
         </trans-unit>
+        <trans-unit id="TableExtension 4032998653 - Method 2155421488 - NamedType 1176815304" size-unit="char" translate="yes" xml:space="preserve" al-object-target="TableExtension 4032998653">
+          <source>Text in english</source>
+          <note from="Developer" annotates="general" priority="2">ESP="La venta actual para el curso %1, edicion %2 superara el numero maximo de alumnos: %3"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Curso Tabla Extension - Method CheckCourseEditionMaxEstudents - NamedType MaxStudentsExceededMsg</note>
+        </trans-unit>
         <trans-unit id="TableExtension 4032998653 - Field 1535828835 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
           <source>Course Edition</source>
           <note from="Developer" annotates="general" priority="2">ESP = "Edición curso"</note>
