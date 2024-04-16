@@ -5,18 +5,13 @@ codeunit 50001 "Course Journal-Post Line"
 
     trigger OnRun()
     begin
-        GetGLSetup();
         RunWithCheck(Rec);
     end;
 
     var
-        GeneralLedgerSetup: Record "General Ledger Setup";
         CourseJournalLineGlobal: Record "Course Journal Line";
         CourseLedgerEntry: Record "Course Ledger Entry";
-        Course: Record Course;
-        ResJnlCheckLine: Codeunit "Res. Jnl.-Check Line";
         NextEntryNo: Integer;
-        GLSetupRead: Boolean;
 
     procedure RunWithCheck(var CourseJournalLine2: Record "Course Journal Line")
     begin
@@ -40,14 +35,10 @@ codeunit 50001 "Course Journal-Post Line"
             NextEntryNo := CourseLedgerEntry.GetLastEntryNo() + 1;
         end;
 
-        Course.Get(CourseJournalLineGlobal."Course No.");
         CourseLedgerEntry.Init(); //inicaliza variable
         CourseLedgerEntry.CopyFromCourseJnlLine(CourseJournalLineGlobal); //copia los datos q vengan de diario
 
-        GetGLSetup();
         CourseLedgerEntry."Total Price" := Round(CourseLedgerEntry."Total Price");
-        CourseLedgerEntry.Quantity := CourseLedgerEntry.Quantity;
-        CourseLedgerEntry."Total Price" := CourseLedgerEntry."Total Price";
         CourseLedgerEntry."Entry No." := NextEntryNo;
 
         OnBeforeCpurseLedgEntryInsert(CourseLedgerEntry, CourseJournalLineGlobal);
@@ -56,15 +47,7 @@ codeunit 50001 "Course Journal-Post Line"
 
         NextEntryNo := NextEntryNo + 1;
 
-
         OnAfterPostCourseJnlLine(CourseJournalLineGlobal, CourseLedgerEntry);
-    end;
-
-    local procedure GetGLSetup()
-    begin
-        if not GLSetupRead then
-            GeneralLedgerSetup.Get();
-        GLSetupRead := true;
     end;
 
     [IntegrationEvent(false, false)]

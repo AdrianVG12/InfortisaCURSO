@@ -1,8 +1,8 @@
 table 50004 "Course Ledger Entry" //Tabla del codigo madre de movimientos de recurso, para MODIFICARLA y hacer los movimientos de curso
 {
     Caption = 'Course Course Entry', Comment = 'ESP = "Movimientos Curso"';
-    /* DrillDownPageID = "Course Ledger Entries";
-    LookupPageID = "Course Ledger Entries"; */
+    DrillDownPageID = "Course Ledger Entries";
+    LookupPageID = "Course Ledger Entries";
     DataClassification = CustomerContent;
 
     fields
