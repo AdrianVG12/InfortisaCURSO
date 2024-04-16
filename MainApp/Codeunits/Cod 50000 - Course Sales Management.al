@@ -78,6 +78,7 @@ codeunit 50000 "Course Sales Management"
         CourseJnlLine.CopyDocumentFields(GenJnlLineDocNo);
         CourseJnlLine.CopyFromSalesLine(SalesLine);
         OnPostCourseJournalLineOnAfterInit(CourseJnlLine, SalesLine);
+        CourseJnlLine."System-Created Entry" := true;
 
         CourseJournalPostLine.RunWithCheck(CourseJnlLine);
 
