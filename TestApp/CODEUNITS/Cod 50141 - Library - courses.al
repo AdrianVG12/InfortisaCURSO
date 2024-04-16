@@ -1,4 +1,4 @@
-codeunit 50141 "Library - courses"
+codeunit 50141 "Library - Courses"
 {
 
     procedure CreateCourse() Course: Record Course;

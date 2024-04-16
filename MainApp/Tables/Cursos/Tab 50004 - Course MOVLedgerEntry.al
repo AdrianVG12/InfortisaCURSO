@@ -84,25 +84,23 @@ table 50004 "Course Ledger Entry" //Tabla del codigo madre de movimientos de rec
         exit(FindRecordManagement.GetLastEntryIntFieldValue(Rec, FieldNo("Entry No.")))
     end;
 
-    /*  procedure CopyFromResJnlLine(CourseJournaLine: Record "Course Journal Line")
-     begin
-         "Document No." := CourseJournaLine."Document No.";
+    procedure CopyFromCourseJnlLine(CourseJournaLine: Record "Course Journal Line") //tiene la liena de diario y va  a crear la linea de diario con la info q tenemos en ella
+    begin
+        Rec."Document No." := CourseJournaLine."Document No.";
+        Rec."Posting Date" := CourseJournaLine."Posting Date";
+        Rec."Course No." := CourseJournaLine."Course No.";
+        Rec."Course Edition" := CourseJournaLine."Course Edition";
+        Rec.Description := CourseJournaLine.Description;
+        Rec.Quantity := CourseJournaLine.Quantity;
+        Rec."Unit Price" := CourseJournaLine."Unit Price";
+        Rec."Total Price" := CourseJournaLine."Total Price";
 
-         "Posting Date" := CourseJournaLine."Posting Date";
-         "Course No." := CourseJournaLine."Course No.";
-         "Course Edition" := CourseJournaLine."Course Edition";
-         Description := CourseJournaLine.Description;
+        OnAfterCopyFromCourseJnlLine(Rec, CourseJournaLine);
+    end;
 
-         Quantity := CourseJournaLine.Quantity;
-         "Unit Price" := CourseJournaLine."Unit Price";
-         "Total Price" := CourseJournaLine."Total Price";
-
-         OnAfterCopyFromResJnlLine(Rec, CourseJournaLine);
-     end;
-
-     [IntegrationEvent(false, false)]
-     procedure OnAfterCopyFromResJnlLine(var CourseLedgerEntry: Record "Course Ledger Entry"; CourseJournalLine: Record "Course Journal Line")
-     begin
-     end; */
+    [IntegrationEvent(false, false)]
+    procedure OnAfterCopyFromCourseJnlLine(var CourseLedgerEntry: Record "Course Ledger Entry"; CourseJournalLine: Record "Course Journal Line")
+    begin
+    end;
 }
 

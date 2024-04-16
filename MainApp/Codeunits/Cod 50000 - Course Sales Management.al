@@ -51,4 +51,57 @@ codeunit 50000 "Course Sales Management"
         Handled := true;
     end;
 
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Sales-Post", 'OnPostSalesLineOnBeforePostSalesLine', '', false, false)] //subscripcion a evento sacado del cod madre para realizar los movc. de curso
+    local procedure "Sales-Post_OnPostSalesLineOnBeforePostSalesLine"(SalesHeader: Record "Sales Header"; var SalesLine: Record "Sales Line"; GenJnlLineDocNo: Code[20]; GenJnlLineExtDocNo: Code[35]; GenJnlLineDocType: Enum "Gen. Journal Document Type"; SrcCode: Code[10]; var GenJnlPostLine: Codeunit "Gen. Jnl.-Post Line"; var IsHandled: Boolean; SalesLineACY: Record "Sales Line")
+    begin
+        if SalesLine.Type = SalesLine.Type::"Course" then //CORRECION DEL BUG SALESLINE (Antes solo se podian añadir cursos)si el valor de saleslines es el valor curso, enontonces hace el procedimiento, si no...
+            PostCourseJournalLine(SalesHeader, SalesLine, GenJnlLineDocNo, GenJnlLineExtDocNo, SrcCode); //llamda a la funcion
+    end;
+
+    local procedure PostCourseJournalLine(var SalesHeader: Record "Sales Header"; var SalesLine: Record "Sales Line"; GenJnlLineDocNo: Code[20]; GenJnlLineExtDocNo: Code[35]; SrcCode: Code[10]) //llamada a la funcion para crear los movs de curso
+    var
+        CourseJnlLine: Record "Course Journal Line"; //para estas tablas que necesitamos crear, buscar la orignal en el codigo fuente (Res. Journal Line), copiarla y crear la nuestra modificando lo necesario
+        CourseJournalPostLine: Codeunit "Course Journal-Post Line";
+        IsHandled: Boolean;
+        ShouldExit: Boolean;
+    begin
+        IsHandled := false;
+        OnBeforePostCourseJournalLine(SalesHeader, SalesLine, IsHandled, GenJnlLineDocNo, GenJnlLineExtDocNo, SrcCode, CourseJournalPostLine);
+        if IsHandled then
+            exit;
+
+        if SalesLine."Qty. to Invoice" = 0 then
+            exit;
+
+        CourseJnlLine.Init();
+        CourseJnlLine.CopyFromSalesHeader(SalesHeader);
+        CourseJnlLine.CopyDocumentFields(GenJnlLineDocNo);
+        CourseJnlLine.CopyFromSalesLine(SalesLine);
+        OnPostCourseJournalLineOnAfterInit(CourseJnlLine, SalesLine);
+
+        CourseJournalPostLine.RunWithCheck(CourseJnlLine);
+
+
+        OnAfterPostCourseJournalLine(SalesHeader, SalesLine, CourseJnlLine);
+    end;
+
+
+    local procedure OnBeforePostCourseJournalLine(var SalesHeader: Record "Sales Header"; var SalesLine: Record "Sales Line"; var isHandled: Boolean; GenJnlLineDocNo: Code[20]; GenJnlLineExtDocNo: Code[35]; SrcCode: Code[10]; arg: Variant)
+    var
+        myInt: Integer;
+    begin
+
+    end;
+
+    local procedure OnAfterPostCourseJournalLine(var SalesHeader: Record "Sales Header"; var SalesLine: Record "Sales Line"; arg: Variant)
+    var
+        myInt: Integer;
+    begin
+    end;
+
+    local procedure OnPostCourseJournalLineOnAfterInit(CourseJnlLine: Record "Course Journal Line"; var SalesLine: Record "Sales Line")
+    var
+        myInt: Integer;
+    begin
+    end;
 }
