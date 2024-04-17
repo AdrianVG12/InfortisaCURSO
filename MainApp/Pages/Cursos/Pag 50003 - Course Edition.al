@@ -32,6 +32,7 @@ page 50003 "Course Edition"
                 field("Sales (Qty.)"; Rec."Sales (Qty.)")
                 {
                     ApplicationArea = All;
+                    //Editable = false; //mejor hacerlo en la tabla en su respectivo campo
                 }
             }
         }

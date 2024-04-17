@@ -31,6 +31,7 @@ table 50003 "Course Edition"
             Caption = 'Sales (Qty.)', Comment = 'ESP="Ventas realizadas de la edicion"';
             DecimalPlaces = 0;
             FieldClass = FlowField;
+            Editable = false;
         }
     }
 
