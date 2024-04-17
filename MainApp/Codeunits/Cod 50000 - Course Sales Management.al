@@ -24,7 +24,7 @@ codeunit 50000 "Course Sales Management"
         //SalesLine."Description 2" := Course."Name 2"; //Eliminamos estos campos comentados ya que no tenemos estos campos
         //SalesLine."Unit of Measure Code" := Course."Base Unit of Measure";
         //SalesLine."Unit Cost (LCY)" := Course."Unit Cost";
-        SalesLine."Gen. Prod. Posting Group" := Course."Gen. Prod. Posting Group";
+        SalesLine."Gen. Prod. Posting Group" := Course."Gen. Prod. Posting Group"; //ESTAS LINEAS DE := ASIGNANN EL VALOR DE LA IZQUIERDA A LA DERECHA
         SalesLine."VAT Prod. Posting Group" := Course."VAT Prod. Posting Group";
         //SalesLine."Tax Group Code" := Course."Tax Group Code";
         SalesLine."Allow Item Charge Assignment" := false; //funcionaldad de BC de cargo de producto

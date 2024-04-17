@@ -31,7 +31,7 @@ tableextension 50100 "Curso Tabla Extension" extends "Sales Line"
     var
         CourseEdition: Record "Course Edition";
         CourseLedgerEntry: Record "Course Ledger Entry";
-        SoldQuantity: Decimal;
+        //SoldQuantity: Decimal;
         //MaxStudentsExceeded: TextConst ENU = 'Text in english', ESP = 'Texto en español';
         MaxStudentsExceededMsg: Label 'Text in english', Comment = 'ESP="La venta actual para el curso %1, edicion %2 superara el numero maximo de alumnos: %3"';
 
@@ -52,13 +52,15 @@ tableextension 50100 "Curso Tabla Extension" extends "Sales Line"
 
         CourseLedgerEntry.SetRange("Course No.", Rec."No."); //filtro para que se obtenga para el numero de curso ("Course No."), del registro en la linea de numero de curso (Rec."No.")
         CourseLedgerEntry.SetRange("Course Edition", Rec."Course Edition"); //filtro para que se obtenga para la edicion de curso ("Course Edition"), del registro en la linea de edicion de curso (Rec."Course Edition)
-        CourseLedgerEntry.SetLoadFields(Quantity);//para leer solo el campo que interesa, quantity
-        if CourseLedgerEntry.FindSet() then //findSet devuelve un boolean , true si ha encontrado registros y false si no los ha encontrado
-            repeat
+        ///CourseLedgerEntry.SetLoadFields(Quantity);//para leer solo el campo que interesa, quantity //comentado por el uso del calcsums, ya no es necesario
+    //el calc sums el resutlado de esa suma colocara la variable
+        CourseLedgerEntry.CalcSums(Quantity); //calcula el total de un campo en una tabla, tiene en cuenta los filtros establecidos, le decimos que sume la Quantity
+        /* if CourseLedgerEntry.FindSet() then //findSet devuelve un boolean , true si ha encontrado registros y false si no los ha encontrado //comentado por el uso del calcsums, ya no es necesario
+            repeat 
                 SoldQuantity := SoldQuantity + CourseLedgerEntry.Quantity; //La catnaidad vendida, asignamos la cantidad indicada en courseLedgerEntry
             until CourseLedgerEntry.Next() = 0;//comprobacion de salida, repetimos hasta que la funcion next nos devuelva el 0, osea que no hay mas registros
-
-        if SoldQuantity + Rec.Quantity > CourseEdition."Max. Students" then //si la suma de soldquintity y el registro de quantity es mas grande que el numero maximo de estudiadntes de la edicion, manda mensaje
+ */
+        if CourseLedgerEntry.Quantity + Rec.Quantity > CourseEdition."Max. Students" then //si la suma de soldquintity y el registro de quantity es mas grande que el numero maximo de estudiadntes de la edicion, manda mensaje
             Message(MaxStudentsExceededMsg, Rec."No.", Rec."Course Edition", CourseEdition."Max. Students") //para mosrar el mensaje con la varibale creada (MaxStudentsExceedingMsg) y los valores que se asignaran en el mensaje a 1%,2%,3%;   
     end;
 }
