@@ -15,23 +15,23 @@ page 50001 Course
             group(General)
             {
                 Caption = 'General', Comment = 'ESP="General"';
-                field("No."; "No.")
+                field("No."; Rec."No.")
                 {
                     ApplicationArea = All;
 
                 }
-                field(Name; Name)
+                field(Name; Rec.Name)
                 {
                     ApplicationArea = All;
                     //CaptionML = ENU = 'Name', ESP = 'Nombre Pagina'; //Sobreecribe a la tradcuccion de la tabla
                     Caption = 'General', Comment = 'ESP="General"';
 
                 }
-                field("Duration (hours)"; "Duration (hours)")
+                field("Duration (hours)"; Rec."Duration (hours)")
                 {
                     ApplicationArea = All;
                 }
-                field("Language Code"; "Language Code")
+                field("Language Code"; Rec."Language Code")
                 {
                     ApplicationArea = All;
                 }
@@ -40,15 +40,15 @@ page 50001 Course
             {
                 Caption = 'Training', Comment = 'ESP="Formación"';
 
-                field("Content Description"; "Content Description")
+                field("Content Description"; Rec."Content Description")
                 {
                     ApplicationArea = All;
                 }
-                field("Type Option"; "Type Option")
+                field("Type Option"; Rec."Type Option")
                 {
                     ApplicationArea = All;
                 }
-                field(Type; Type)
+                field(Type; Rec.Type)
                 {
                     ApplicationArea = All;
                 }
@@ -61,7 +61,7 @@ page 50001 Course
             group(Inovicing)
             {
                 Caption = 'Inovicing', Comment = 'ESP="Facturación"';
-                field(Price; Price)
+                field(Price; Rec.Price)
                 {
                     ApplicationArea = All;
                 }

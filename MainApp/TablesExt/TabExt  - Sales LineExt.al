@@ -50,7 +50,7 @@ tableextension 50100 "Curso Tabla Extension" extends "Sales Line"
         if CourseLedgerEntry.FindSet() then //findSet devuelve un boolean , true si ha encontrado registros y false si no los ha encontrado
             repeat
                 SoldQuantity := SoldQuantity + CourseLedgerEntry.Quantity; //La catnaidad vendida, asignamos la cantidad indicada en courseLedgerEntry
-            until CourseLedgerEntry.Next() = 0;
+            until CourseLedgerEntry.Next() = 0;//comprobacion de salida, repetimos hasta que la funcion next nos devuelva el 0, osea que no hay mas registros
 
         if SoldQuantity + Rec.Quantity > CourseEdition."Max. Students" then //si la suma de soldquintity y el registro de quantity es mas grande que el numero maximo de estudiadntes de la edicion, manda mensaje
             Message(MaxStudentsExceededMsg, Rec."No.", Rec."Course Edition", CourseEdition."Max. Students") //para mosrar el mensaje con la varibale creada (MaxStudentsExceedingMsg) y los valores que se asignaran en el mensaje a 1%,2%,3%;   
