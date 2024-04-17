@@ -62,8 +62,9 @@ table 50004 "Course Ledger Entry" //Tabla del codigo madre de movimientos de rec
         {
             Clustered = true;
         }
-        key(Key2; "Course No.", "Posting Date")
+        key(Key2; "Course No.", "Course Edition", "Posting Date")
         {
+            SumIndexFields = Quantity; // para el calc sums crear clave
         }
         key(Key5; "Document No.", "Posting Date")
         {
