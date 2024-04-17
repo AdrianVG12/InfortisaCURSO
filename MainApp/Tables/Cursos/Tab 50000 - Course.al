@@ -29,10 +29,13 @@ table 50000 Course
         field(4; "Duration (hours)"; Integer)
         {
             Caption = 'Duration (hours)', Comment = 'ESP="Duracion (horas)"';
+            BlankZero = true;
         }
         field(5; Price; Decimal)
         {
             Caption = 'Price', Comment = 'ESP="Precio"';
+            BlankZero = true;
+            AutoFormatType = 1; //Busca la congiguracion de contabilidad para darle los deciamles necesarios y la config necesaria
         }
         field(6; "Language Code"; Code[10])
         {

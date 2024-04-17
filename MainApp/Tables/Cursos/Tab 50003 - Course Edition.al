@@ -21,6 +21,7 @@ table 50003 "Course Edition"
         field(4; "Max. Students"; Integer)
         {
             Caption = 'Max. Students', Comment = 'ESP="Nº máx. estudiantes"';
+            BlankZero = true;
         }
         field(7; "Sales (Qty.)"; Decimal) //campo calculado
         {
@@ -32,6 +33,7 @@ table 50003 "Course Edition"
             DecimalPlaces = 0;
             FieldClass = FlowField;
             Editable = false;
+            BlankZero = true; //si el valor es 0 dejarlo en blanco
         }
     }
 

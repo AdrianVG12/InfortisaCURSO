@@ -42,6 +42,7 @@ page 50000 Courses
                 {
                     ApplicationArea = All;
                     ToolTip = 'Campo Precio';
+                    //DecimalPlaces = 2;
                 }
                 field("Language Code"; Rec."Language Code")
                 {
