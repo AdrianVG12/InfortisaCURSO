@@ -24,12 +24,9 @@ table 50003 "Course Edition"
         }
         field(7; "Sales (Qty.)"; Decimal) //campo calculado
         {
-            CalcFormula = sum("Course Ledger Entry".Quantity where("Course No." = field("Course No."),
-                                                                    "Course Edition" = field(Edition)
-
-
-
-
+            CalcFormula = sum("Course Ledger Entry".Quantity where(
+                                "Course No." = field("Course No."),
+                                "Course Edition" = field(Edition)
             ));
             Caption = 'Sales (Qty.)', Comment = 'ESP="Ventas realizadas de la edicion"';
             DecimalPlaces = 0;
