@@ -43,10 +43,16 @@ tableextension 50100 "Curso Tabla Extension" extends "Sales Line"
         if Rec.Quantity = 0 then   // Si el registro de canitdad esta vacio, salir
             exit;
 
+
+        //select * from "Course Edition" where [No_] = 'GL00000' and [Course Edition] = 'asdfgasdff' //sentencia sql que hace select en all (todos los campos de CourseEdtiion)
+        //select PK,[Max_Students] from "Course Edition" where [No_] = 'GL00000' and [Course Edition] = 'asdfgasdff' // sentencia sql que hace select en el campo concreto MaxStudents
+
+        CourseEdition.SetLoadFields("Max. Students"); //para leer solo el campo que interesa, mexestudents
         CourseEdition.Get(Rec."No.", Rec."Course Edition"); //Get en la variable para obetenr los datos de la BD, para leer el registro en conctero le pasamos de las claves priamrias 
 
         CourseLedgerEntry.SetRange("Course No.", Rec."No."); //filtro para que se obtenga para el numero de curso ("Course No."), del registro en la linea de numero de curso (Rec."No.")
         CourseLedgerEntry.SetRange("Course Edition", Rec."Course Edition"); //filtro para que se obtenga para la edicion de curso ("Course Edition"), del registro en la linea de edicion de curso (Rec."Course Edition)
+        CourseLedgerEntry.SetLoadFields(Quantity);//para leer solo el campo que interesa, quantity
         if CourseLedgerEntry.FindSet() then //findSet devuelve un boolean , true si ha encontrado registros y false si no los ha encontrado
             repeat
                 SoldQuantity := SoldQuantity + CourseLedgerEntry.Quantity; //La catnaidad vendida, asignamos la cantidad indicada en courseLedgerEntry
