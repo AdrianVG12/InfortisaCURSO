@@ -29,6 +29,10 @@ page 50003 "Course Edition"
                 {
                     ApplicationArea = All;
                 }
+                field("Sales (Qty.)"; Rec."Sales (Qty.)")
+                {
+                    ApplicationArea = All;
+                }
             }
         }
     }

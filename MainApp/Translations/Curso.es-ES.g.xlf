@@ -104,6 +104,12 @@
           <note from="Xliff Generator" annotates="general" priority="3">Table Course Edition - Field Max. Students - Property Caption</note>
           <target>Nº máx. estudiantes</target>
         </trans-unit>
+        <trans-unit id="Table 1535828835 - Field 3986305445 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sales (Qty.)</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Ventas realizadas de la edicion"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Course Edition - Field Sales (Qty.) - Property Caption</note>
+          <target>Ventas realizadas de la edicion</target>
+        </trans-unit>
         <trans-unit id="Table 1535828835 - Field 474480784 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Start Date</source>
           <note from="Developer" annotates="general" priority="2">ESP="Fecha Inicio"</note>

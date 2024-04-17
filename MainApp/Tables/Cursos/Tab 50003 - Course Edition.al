@@ -22,6 +22,19 @@ table 50003 "Course Edition"
         {
             Caption = 'Max. Students', Comment = 'ESP="Nº máx. estudiantes"';
         }
+        field(7; "Sales (Qty.)"; Decimal) //campo calculado
+        {
+            CalcFormula = sum("Course Ledger Entry".Quantity where("Course No." = field("Course No."),
+                                                                    "Course Edition" = field(Edition)
+
+
+
+
+            ));
+            Caption = 'Sales (Qty.)', Comment = 'ESP="Ventas realizadas de la edicion"';
+            DecimalPlaces = 0;
+            FieldClass = FlowField;
+        }
     }
 
     keys
