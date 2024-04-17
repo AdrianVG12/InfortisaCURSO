@@ -10,6 +10,7 @@ page 50003 "Course Edition"
     {
         area(Content)
         {
+
             repeater(ReapeterControl)
             {
                 field("Course No."; Rec."Course No.")

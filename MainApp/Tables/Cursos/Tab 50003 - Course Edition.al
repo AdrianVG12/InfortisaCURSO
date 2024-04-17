@@ -23,17 +23,23 @@ table 50003 "Course Edition"
             Caption = 'Max. Students', Comment = 'ESP="Nº máx. estudiantes"';
             BlankZero = true;
         }
-        field(7; "Sales (Qty.)"; Decimal) //campo calculado
+        field(5; "Sales (Qty.)"; Decimal) //campo calculado
         {
             CalcFormula = sum("Course Ledger Entry".Quantity where(
                                 "Course No." = field("Course No."),
-                                "Course Edition" = field(Edition)
+                                "Course Edition" = field(Edition),
+                                "Posting Date" = field("Date Filter")
             ));
             Caption = 'Sales (Qty.)', Comment = 'ESP="Ventas realizadas de la edicion"';
             DecimalPlaces = 0;
             FieldClass = FlowField;
             Editable = false;
             BlankZero = true; //si el valor es 0 dejarlo en blanco
+        }
+        field(6; "Date Filter"; Date)
+        {
+            Caption = 'Date Filter', comment = 'ESP="Filtro de fechas"';
+            FieldClass = FlowFilter;
         }
     }
 
