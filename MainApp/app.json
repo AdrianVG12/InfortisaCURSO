@@ -21,7 +21,6 @@
     }
   ],
   "contextSensitiveHelpUrl": "https://plantilla.com/help/",
-  "showMyCode": true,
   "features": ["TranslationFile"],
   "runtime": "9.0",
   "target": "OnPrem",

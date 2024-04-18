@@ -3,8 +3,8 @@ report 50100 ReportCourseSales
     Caption = 'Course Sales', comment = 'ESP="Report Ventas de Cursos"';
     UsageCategory = ReportsAndAnalysis;
     ApplicationArea = All;
-    //DefaultRenderingLayout = LayoutName; //indica como se tiene que imprimir
-    ProcessingOnly = true; // idnica el rpoceso, si imprimirlo y mostrarlo (false), o que sea un poceso de datos que no se muestre (true)
+    DefaultRenderingLayout = RDLCLayout; //indica como se tiene que imprimir
+    ProcessingOnly = false; // idnica el rpoceso, si imprimirlo y mostrarlo (false), o que sea un poceso de datos que no se muestre (true)
 
     dataset //conjunto de datos
     {
@@ -13,22 +13,30 @@ report 50100 ReportCourseSales
             RequestFilterFields = "No.", "Duration (hours)", Type; //filtros de los campos indicados para que el ususario filtre por estos directamtne
             dataitem("Course Edition"; "Course Edition")
             {
-
                 DataItemLink = "Course No." = field("No."); //El encalce entre los 2 data tiems es que el campo CourseNo, tiene que ser igual que el campo No. del data item principal
                 DataItemTableView = sorting("Course No.", Edition);   //lo que hya aqui, no se muestra a el uauario 
-                trigger OnAfterGetRecord()
-                begin
-                    Counter += 1;
-                end;
+                column(Edition; "Course Edition".Edition)
+                {
+
+                }
+                column(Max__Students; "Course Edition"."Max. Students")
+                {
+
+                }
+                column(Sales__Qty__; "Course Edition"."Sales (Qty.)")
+                {
+
+                }
             }
-            trigger OnAfterGetRecord()
+            column(No_; TablaCourse."No.") // columnas que se veran en el report
+            {
 
-            begin
-                Counter += 1;
+            }
+            column(Name; TablaCourse.Name)
+            {
 
-            end;
+            }
         }
-
     }
 
     requestpage //lo primero que se ejecuta, se defina la pagina que se le muestra al ususrio previa a la ejecucion del report
@@ -67,14 +75,24 @@ report 50100 ReportCourseSales
             AText := 'Ejemplitoooo';
         end;
     }
-    /* rendering // despues de definir los datos(dataset) y la pagina (requestpage) ,como pintar el objeto
+    rendering // despues de definir los datos(dataset) y la pagina (requestpage) ,como pintar el objeto
+    {
+        layout(RDLCLayout)
         {
-            layout(LayoutName)
-            {
-                Type = Excel;
-                LayoutFile = 'mySpreadsheet.xlsx';
-            }
+            Type = RDLC;
+            LayoutFile = 'CourseSales.rdl';
+        }
+        /* layout(ExcelLayout)
+        {
+            Type = Excel;
+            LayoutFile = 'CourseSales.xlsx';
+        }
+        layout(RDLCLayout2)
+        {
+            Type = RDLC;
+            LayoutFile = 'CourseSales2.rdl';
         } */
+    }
     trigger OnPostReport()
     var
         myInt: Integer;
