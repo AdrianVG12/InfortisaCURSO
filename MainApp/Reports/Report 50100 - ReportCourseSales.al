@@ -3,7 +3,7 @@ report 50100 ReportCourseSales
     Caption = 'Course Sales', comment = 'ESP="Report Ventas de Cursos"';
     UsageCategory = ReportsAndAnalysis;
     ApplicationArea = All;
-    DefaultRenderingLayout = RDLCLayout; //indica como se tiene que imprimir
+    DefaultRenderingLayout = ExcelLayout; //indica como se tiene que imprimir
     ProcessingOnly = false; // idnica el rpoceso, si imprimirlo y mostrarlo (false), o que sea un poceso de datos que no se muestre (true)
 
     dataset //conjunto de datos
@@ -87,16 +87,16 @@ report 50100 ReportCourseSales
             Type = RDLC;
             LayoutFile = 'CourseSales.rdl';
         }
-        /* layout(ExcelLayout)
+        layout(ExcelLayout)
         {
             Type = Excel;
             LayoutFile = 'CourseSales.xlsx';
         }
-        layout(RDLCLayout2)
-        {
-            Type = RDLC;
-            LayoutFile = 'CourseSales2.rdl';
-        } */
+        //     layout(RDLCLayout2)
+        //     {
+        //         Type = RDLC;
+        //         LayoutFile = 'CourseSales2.rdl';
+        //     }
     }
 
     var
