@@ -11,30 +11,35 @@ report 50100 ReportCourseSales
         dataitem(TablaCourse; Course) // dataitem ls talbas a usar en el report y column los campos //las columnas se usan si se va a imprimir
         {
             RequestFilterFields = "No.", "Duration (hours)", Type; //filtros de los campos indicados para que el ususario filtre por estos directamtne
+            PrintOnlyIfDetail = true; // imprimir solo si tiene detalle, si algun campo no tiene registros, no lo imprime (hace que no se muestren lso cursos si la edicion esta vacia)
             dataitem("Course Edition"; "Course Edition")
             {
                 DataItemLink = "Course No." = field("No."); //El encalce entre los 2 data tiems es que el campo CourseNo, tiene que ser igual que el campo No. del data item principal
                 DataItemTableView = sorting("Course No.", Edition);   //lo que hya aqui, no se muestra a el uauario 
+                /* column(Course_No_; "Course Edition"."Course No.")
+                {
+                    IncludeCaption = true;
+                } */
                 column(Edition; "Course Edition".Edition)
                 {
-
+                    IncludeCaption = true;
                 }
                 column(Max__Students; "Course Edition"."Max. Students")
                 {
-
+                    IncludeCaption = true;
                 }
                 column(Sales__Qty__; "Course Edition"."Sales (Qty.)")
                 {
-
+                    IncludeCaption = true;
                 }
             }
             column(No_; TablaCourse."No.") // columnas que se veran en el report
             {
-
+                IncludeCaption = true;
             }
             column(Name; TablaCourse.Name)
             {
-
+                IncludeCaption = true;
             }
         }
     }
