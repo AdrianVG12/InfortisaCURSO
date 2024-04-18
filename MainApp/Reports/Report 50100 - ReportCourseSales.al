@@ -93,12 +93,6 @@ report 50100 ReportCourseSales
             LayoutFile = 'CourseSales2.rdl';
         } */
     }
-    trigger OnPostReport()
-    var
-        myInt: Integer;
-    begin
-        Message('Hay %1 interacciones', Counter); //el 1% se sustituye por Counter, si huebese un 2% se cambiaria por el segundo parametro a pasar
-    end;
 
     var
         AnOption: Boolean;
