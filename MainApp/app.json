@@ -23,7 +23,7 @@
   "contextSensitiveHelpUrl": "https://plantilla.com/help/",
   "showMyCode": true,
   "features": ["TranslationFile"],
-  "runtime": "7.0",
+  "runtime": "9.0",
   "target": "OnPrem",
   "suppressWarnings": ["AA0218","AA0215"]
 }
