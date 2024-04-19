@@ -24,7 +24,7 @@ page 50000 Courses
                 field(Name; Rec.Name)
                 {
                     ApplicationArea = All;
-                    Caption = 'Name', Comment = 'ESP="Nombre Pagina"'; //Sobreecribe a la tradcuccion de la tabla
+                    Caption = 'Name', Comment = 'ESP="Nombre"'; //Sobreecribe a la tradcuccion de la tabla
                     ToolTip = 'Campo Nombre';
 
                 }
