@@ -41,7 +41,7 @@ codeunit 50001 "Course Journal-Post Line"
         CourseLedgerEntry."Total Price" := Round(CourseLedgerEntry."Total Price");
         CourseLedgerEntry."Entry No." := NextEntryNo;
 
-        OnBeforeCpurseLedgEntryInsert(CourseLedgerEntry, CourseJournalLineGlobal);
+        OnBeforeCourseLedgEntryInsert(CourseLedgerEntry, CourseJournalLineGlobal);
 
         CourseLedgerEntry.Insert(true);
 
@@ -61,7 +61,7 @@ codeunit 50001 "Course Journal-Post Line"
     end;
 
     [IntegrationEvent(false, false)]
-    local procedure OnBeforeCpurseLedgEntryInsert(var CourseLedgerEntry: Record "Course Ledger Entry"; CourseJournalLine: Record "Course Journal Line")
+    local procedure OnBeforeCourseLedgEntryInsert(var CourseLedgerEntry: Record "Course Ledger Entry"; CourseJournalLine: Record "Course Journal Line")
     begin
     end;
 

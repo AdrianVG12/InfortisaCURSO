@@ -12,7 +12,7 @@ table 50005 "Course Journal Line"
         }
         field(2; "Line No."; Integer)
         {
-            Caption = 'Line No.', Comment = 'ESP = "Numero linea"';
+            Caption = 'Line Nooo.', Comment = 'ESP = "Numero lineasss"';
         }
         field(4; "Document No."; Code[20])
         {
