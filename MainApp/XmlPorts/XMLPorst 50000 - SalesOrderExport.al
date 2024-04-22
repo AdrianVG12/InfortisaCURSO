@@ -2,10 +2,10 @@ xmlport 50000 "Sales Order Export"
 {
     Caption = 'Sales Order Export', Comment = 'ESP="Exportacion pedidos venta"';
     Direction = Export;
-    Format = VariableText; //fromato en el que nos devuelve BC el xmlreport
+    Format = FixedText; //fromato en el que nos devuelve BC el xmlreport
     FormatEvaluate = Xml; //fromato para los datos a manejar, porej: la fecha se muestra 2022/01/16, con el año primero, por la config de BC.
-    FieldSeparator = ' ; '; //Propiedades Field.. son solo para el Format = VariableText;
-    FieldDelimiter = '''';
+    /* FieldSeparator = ' ; '; //Propiedades Field.. son solo para el Format = VariableText;
+    FieldDelimiter = ''''; */
 
 
     schema //esquema XML
@@ -19,19 +19,24 @@ xmlport 50000 "Sales Order Export"
                 SourceTableView = where("Document Type" = const(Order)); // para que el tipo de docuemtno sea tipo pedido si o si (order)
                 fieldattribute(Customer; SalesHeader."Sell-to Customer No.")
                 {
+                    Width = 50; //Ponemos el tamaño que queremos mostrar en el archivo de texto fijo.
                 }
                 fieldelement(No; SalesHeader."No.")
                 {
+                    Width = 20;
                 }
                 fieldelement(Name; SalesHeader."Sell-to Customer Name")
                 {
+                    Width = 20;
                 }
                 fieldelement(Date; SalesHeader."Order Date")
                 {
+                    Width = 10;
 
                 }
                 fieldelement(Currency; SalesHeader."Currency Code")
                 {
+                    Width = 20;
                     trigger OnBeforePassField()
                     var
                         GeneralLedgerSetup: Record "General Ledger Setup"; //tabla de contablidiad donde esta la divisa
@@ -45,7 +50,7 @@ xmlport 50000 "Sales Order Export"
                 }
                 fieldelement(Location; SalesHeader."Location Code")
                 {
-
+                    Width = 20;
                 }
 
                 //COMENTAMOS ESTA TABLA PAR MOSTRAR SOLO UNA, YA QUE EN TEXTO PLANO, 2 TABLAS SE ENTIENDEN MAL, EN XML BIEN.
