@@ -97,6 +97,24 @@ page 50000 Courses
                     Page.Run(page::"Course Ledger Entries");
                 end; */
             }
+            action(ImportCourses) //No es necesario, solo para info/apuntes, esto ya se hace al indicar el CardPageID = Course;
+            {
+                Caption = 'Import Courses', Comment = 'ESP="Importar cursos"';
+                ApplicationArea = All;
+                Image = Import;
+                ToolTip = 'Accion para importar cursos';
+                RunObject = xmlport "XMLPort Import Courses"; // Hace lo mismo que el Page.run del trigger OnAction, ejecuta la pag. 
+                Promoted = true;
+                PromotedCategory = Category4; //Para indicar el action en la Category4, cambiamos el nombre arriba en las propiedades principales
+                PromotedOnly = true;
+                /* trigger OnAction()
+                var
+
+                begin
+                    Message('Abriendo la ficha de movimientos');
+                    Page.Run(page::"Course Ledger Entries");
+                end; */
+            }
         }
     }
 

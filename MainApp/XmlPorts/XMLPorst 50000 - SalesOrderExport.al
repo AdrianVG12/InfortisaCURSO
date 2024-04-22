@@ -4,8 +4,8 @@ xmlport 50000 "Sales Order Export"
     Direction = Export;
     Format = FixedText; //fromato en el que nos devuelve BC el xmlreport
     FormatEvaluate = Xml; //fromato para los datos a manejar, porej: la fecha se muestra 2022/01/16, con el año primero, por la config de BC.
-    /* FieldSeparator = ' ; '; //Propiedades Field.. son solo para el Format = VariableText;
-    FieldDelimiter = ''''; */
+    /*    FieldSeparator = ' ; '; //Propiedades Field.. son solo para el Format = VariableText;
+     FieldDelimiter = ''''; */
 
 
     schema //esquema XML
@@ -54,7 +54,7 @@ xmlport 50000 "Sales Order Export"
                 }
 
                 //COMENTAMOS ESTA TABLA PAR MOSTRAR SOLO UNA, YA QUE EN TEXTO PLANO, 2 TABLAS SE ENTIENDEN MAL, EN XML BIEN.
-                /* tableelement(SalesLine; "Sales Line") 
+                /* tableelement(SalesLine; "Sales Line")
                 {
                     //filtros para la relacion con la tabla principal
                     SourceTableView = where("Document Type" = const(Order));
@@ -89,9 +89,9 @@ xmlport 50000 "Sales Order Export"
                     fieldelement(Discount; SalesLine."Line Discount %")
                     {
 
-                    }
+                    } 
 
-                } */
+                }*/
             }
         }
     }
