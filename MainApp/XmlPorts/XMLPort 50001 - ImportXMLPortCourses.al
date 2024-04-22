@@ -13,6 +13,7 @@ xmlport 50001 "XMLPort Import Courses"
         {
             tableelement(Cursos; Course)
             {
+                //AutoSave = false; // Para que no se escriban en base de datos lo que viene de un archivo, para por ejemplo hacer cambios adicionales. Lo que hara sera que sobre la variable Cursos, se asignan los valores del archvio .txt y del codigo, entonces si AutoSave esta a true, el sistema al asuignar la variable hace el insert, si esta en flase, no se hace el inster, y hay que llamar a la funcion de insert o modify
                 AutoUpdate = true; //para mdoificar los campos que ya puedan exisitir y crear nuevos
                 //AutoReplace = true;//reemplazara el registro con un unevo registro en la bd
                 fieldelement(No; Cursos."No.") { }
@@ -28,11 +29,13 @@ xmlport 50001 "XMLPort Import Courses"
                 trigger OnBeforeModifyRecord()
                 begin
                     Funcionalidad();
+                    //Cursos.Modify(); //Hecho para el AutoSave = flase;
                 end;
 
                 trigger OnBeforeInsertRecord()
                 begin
                     Funcionalidad();
+                    //Cursos.Insert(); //Hecho para el AutoSave = flase;
                 end;
 
             }
