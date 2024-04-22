@@ -19,7 +19,7 @@ xmlport 50000 "Sales Order Export"
                 SourceTableView = where("Document Type" = const(Order)); // para que el tipo de docuemtno sea tipo pedido si o si (order)
                 fieldattribute(Customer; SalesHeader."Sell-to Customer No.")
                 {
-                    Width = 50; //Ponemos el tamaño que queremos mostrar en el archivo de texto fijo.
+                    Width = 20; //Ponemos el tamaño de las columnas que queremos mostrar en el archivo de texto fijo.
                 }
                 fieldelement(No; SalesHeader."No.")
                 {
@@ -27,17 +27,17 @@ xmlport 50000 "Sales Order Export"
                 }
                 fieldelement(Name; SalesHeader."Sell-to Customer Name")
                 {
-                    Width = 20;
+                    Width = 40;
                 }
                 fieldelement(Date; SalesHeader."Order Date")
                 {
-                    Width = 10;
+                    Width = 20;
 
                 }
                 fieldelement(Currency; SalesHeader."Currency Code")
                 {
                     Width = 20;
-                    trigger OnBeforePassField()
+                    trigger OnBeforePassField() //para que salga la divisa dependiendo del pais
                     var
                         GeneralLedgerSetup: Record "General Ledger Setup"; //tabla de contablidiad donde esta la divisa
                     begin
