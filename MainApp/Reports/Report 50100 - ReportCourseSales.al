@@ -4,7 +4,7 @@ report 50100 ReportCourseSales
     UsageCategory = ReportsAndAnalysis;
     ApplicationArea = All;
     DefaultRenderingLayout = ExcelLayout; //indica como se tiene que imprimir
-    ProcessingOnly = false; // idnica el rpoceso, si imprimirlo y mostrarlo (false), o que sea un poceso de datos que no se muestre (true)
+    ProcessingOnly = true; // idnica el rpoceso, si imprimirlo y mostrarlo (false), o que sea un poceso de datos que no se muestre (true)
 
     dataset //conjunto de datos
     {
@@ -20,18 +20,18 @@ report 50100 ReportCourseSales
                 {
                     IncludeCaption = true;
                 } */
-                column(Edition; "Course Edition".Edition)
-                {
-                    IncludeCaption = true;
-                }
-                column(Max__Students; "Course Edition"."Max. Students")
-                {
-                    IncludeCaption = true;
-                }
-                column(Sales__Qty__; "Course Edition"."Sales (Qty.)")
-                {
-                    IncludeCaption = true;
-                }
+            }
+            column(Edition; "Course Edition".Edition)
+            {
+                IncludeCaption = true;
+            }
+            column(Max__Students; "Course Edition"."Max. Students")
+            {
+                IncludeCaption = true;
+            }
+            column(Sales__Qty__; "Course Edition"."Sales (Qty.)")
+            {
+                IncludeCaption = true;
             }
             column(No_; TablaCourse."No.") // columnas que se veran en el report
             {
@@ -42,7 +42,11 @@ report 50100 ReportCourseSales
                 IncludeCaption = true;
             }
         }
+
     }
+
+
+
 
     requestpage //lo primero que se ejecuta, se defina la pagina que se le muestra al ususrio previa a la ejecucion del report
     {

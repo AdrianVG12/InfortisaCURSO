@@ -613,24 +613,6 @@
     </ReportSection>
   </ReportSections>
   <ReportParameters>
-    <ReportParameter Name="No_Caption">
-      <DataType>String</DataType>
-      <DefaultValue>
-        <Values>
-          <Value>No_Caption</Value>
-        </Values>
-      </DefaultValue>
-      <Prompt>No_Caption</Prompt>
-    </ReportParameter>
-    <ReportParameter Name="NameCaption">
-      <DataType>String</DataType>
-      <DefaultValue>
-        <Values>
-          <Value>NameCaption</Value>
-        </Values>
-      </DefaultValue>
-      <Prompt>NameCaption</Prompt>
-    </ReportParameter>
     <ReportParameter Name="EditionCaption">
       <DataType>String</DataType>
       <DefaultValue>
@@ -658,6 +640,24 @@
       </DefaultValue>
       <Prompt>Sales__Qty__Caption</Prompt>
     </ReportParameter>
+    <ReportParameter Name="No_Caption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>No_Caption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>No_Caption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="NameCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>NameCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>NameCaption</Prompt>
+    </ReportParameter>
   </ReportParameters>
   <ReportParametersLayout>
     <GridLayoutDefinition>
@@ -667,27 +667,27 @@
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>0</RowIndex>
-          <ParameterName>No_Caption</ParameterName>
-        </CellDefinition>
-        <CellDefinition>
-          <ColumnIndex>0</ColumnIndex>
-          <RowIndex>1</RowIndex>
-          <ParameterName>NameCaption</ParameterName>
-        </CellDefinition>
-        <CellDefinition>
-          <ColumnIndex>0</ColumnIndex>
-          <RowIndex>2</RowIndex>
           <ParameterName>EditionCaption</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
-          <RowIndex>3</RowIndex>
+          <RowIndex>1</RowIndex>
           <ParameterName>Max__StudentsCaption</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
-          <RowIndex>4</RowIndex>
+          <RowIndex>2</RowIndex>
           <ParameterName>Sales__Qty__Caption</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>3</RowIndex>
+          <ParameterName>No_Caption</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>4</RowIndex>
+          <ParameterName>NameCaption</ParameterName>
         </CellDefinition>
       </CellDefinitions>
     </GridLayoutDefinition>
@@ -734,12 +734,6 @@ End Function
   <DataSets>
     <DataSet Name="DataSet_Result">
       <Fields>
-        <Field Name="No_">
-          <DataField>No_</DataField>
-        </Field>
-        <Field Name="Name">
-          <DataField>Name</DataField>
-        </Field>
         <Field Name="Edition">
           <DataField>Edition</DataField>
         </Field>
@@ -751,6 +745,12 @@ End Function
         </Field>
         <Field Name="Sales__Qty__Format">
           <DataField>Sales__Qty__Format</DataField>
+        </Field>
+        <Field Name="No_">
+          <DataField>No_</DataField>
+        </Field>
+        <Field Name="Name">
+          <DataField>Name</DataField>
         </Field>
       </Fields>
       <Query>
